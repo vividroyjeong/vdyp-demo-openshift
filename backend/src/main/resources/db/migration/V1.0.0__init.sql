@@ -29,7 +29,7 @@ CREATE TABLE "user_addresses"
 );
 
 
-TRUNCATE "users";
+delete from USERS where true;
 
 INSERT INTO USERS.USERS (NAME, EMAIL)
 VALUES ('John', 'John.ipsum@test.com'),
