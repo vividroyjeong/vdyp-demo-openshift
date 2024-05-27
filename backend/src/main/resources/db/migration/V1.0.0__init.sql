@@ -27,3 +27,13 @@ CREATE TABLE "user_addresses"
     zip_code VARCHAR(10) NOT NULL,
     user_id  INTEGER     NOT NULL REFERENCES "users" (id) ON DELETE CASCADE
 );
+
+
+TRUNCATE "users";
+
+INSERT INTO USERS.USERS (NAME, EMAIL)
+VALUES ('John', 'John.ipsum@test.com'),
+       ('Jane', 'Jane.ipsum@test.com'),
+       ('Jack', 'Jack.ipsum@test.com'),
+       ('Jill', 'Jill.ipsum@test.com'),
+       ('Joe', 'Joe.ipsum@test.com');
