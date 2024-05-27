@@ -31,7 +31,7 @@ CREATE TABLE "user_addresses"
 
 delete from USERS where true;
 
-INSERT INTO USERS.USERS (NAME, EMAIL)
+INSERT INTO USERS (NAME, EMAIL)
 VALUES ('John', 'John.ipsum@test.com'),
        ('Jane', 'Jane.ipsum@test.com'),
        ('Jack', 'Jack.ipsum@test.com'),
