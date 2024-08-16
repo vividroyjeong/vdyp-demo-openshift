@@ -1,15 +1,8 @@
-# Build static files
-# Node Bullseye has npm
-FROM node:20.16.0-bullseye-slim AS buildWithDevDeps
+# Quarkus Images
+# https://github.com/quarkusio/quarkus-images
 
-# Install packages, build and keep only prod packages
-WORKDIR /app
-COPY *.json ./
-COPY ./src ./src
-COPY ./prisma ./prisma
-RUN npm ci --ignore-scripts --no-update-notifier
-RUN npm run prisma-generate
-FROM node:20.16.0-bullseye-slim AS build
+# "Provides the native-image executable. Used by the Maven and Gradle plugin from Quarkus to build linux64 executables"
+FROM quay.io/quarkus/ubi-quarkus-graalvmce-builder-image:jdk-21 AS build
 
 # Image defaults to /project; copy controlled by .dockerignore
 COPY --chown=quarkus:quarkus . ./
